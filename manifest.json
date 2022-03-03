@@ -12,7 +12,9 @@
             "js": ["script/content.js"]
         }
     ],
-    "permissions": ["tabs"],
+    "permissions": [
+        "tabs"
+    ],
     
     "background": {
         "scripts": ["script/background.js"]

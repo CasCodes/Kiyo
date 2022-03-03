@@ -1,11 +1,14 @@
 // content.js triggers when the page gets loaded
 console.log("Kiyo online!")
 
+
 // function to read selection from content
 function readSelection() {
     if (window.getSelection) {
         var textSelected = window.getSelection().toString();
         console.log(textSelected)
+
+        // pass textSelected into python?
     }
 }
 
