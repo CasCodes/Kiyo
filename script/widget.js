@@ -1,5 +1,4 @@
 
-
 // adds click listener to button
 function addListener() {
     var btn = document.getElementById("goBtn");
@@ -17,7 +16,8 @@ function addListener() {
         // send message to content.js
         function goPressed(tabs) {
             let msg = {
-                txt: "send from popup!"
+                action: "go",
+                src: "widget"
             }
             chrome.tabs.sendMessage(tabs[0].id, msg);
         }
