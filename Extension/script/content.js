@@ -2,9 +2,9 @@
 console.log("Kiyo online!")
 
 function requestAPI(text) {
-    fetch("http://127.0.0.1:5000/summary/" + text, {mode: "no-cors"})
+    fetch("http://127.0.0.1:5000/summary/" + text, {mode: "no-cors"}, {method: "GET"})
     .then(function (response) {
-        return response.json;
+        return JSON.stringify(response)
     }).then(function (text) {
         console.log('GET response:');
         console.log(text); 

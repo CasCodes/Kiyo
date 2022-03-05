@@ -10,4 +10,4 @@ Inasmuch as software development is rarely a one-person effort, you are allowed 
 """
 
 response = requests.get(BASE + "summary/" + text)
-print(response.json())
+print(response.json()) # .json()

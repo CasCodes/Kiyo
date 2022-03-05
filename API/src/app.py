@@ -13,9 +13,9 @@ class Summary(Resource):
     # get request text string and returns summary
     def get(self, text):
         
-        # access the ML here
+        # access the ML model
         summary = compute_summarize(text)
-        print(jsonify(summary))
+        print(summary)
         return jsonify(summary)
 
     def post(self):
@@ -28,9 +28,11 @@ if __name__ == "__main__":
 
 @app.after_request
 def after_request(response):
-    white_origin= ['http://www.dom.com:8000','http://localhost']
+    white_origin= ['http://localhost']
     if request.headers['Origin'] in white_origin:
         response.headers['Access-Control-Allow-Origin'] = request.headers['Origin'] 
         response.headers['Access-Control-Allow-Methods'] = 'PUT,GET,POST,DELETE'
         response.headers['Access-Control-Allow-Headers'] = 'Content-Type,Authorization'
-    return jsonify(response)
+    print("after:")
+    print(response)
+    return response
