@@ -5,5 +5,5 @@ gunicorn
 requests
 transformers
 #torch
-https://download.pytorch.org/whl/torch_stable.html
+https://download.pytorch.org/whl/cpu/torch-1.10.1%2Bcpu-cp36-cp36m-win_amd64.whl
 itsdangerous==1.1.0
