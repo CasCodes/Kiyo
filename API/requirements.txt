@@ -6,3 +6,4 @@ requests
 transformers
 #torch
 tensorflow-cpu
+itsdangerous==1.1.0
