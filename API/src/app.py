@@ -26,7 +26,6 @@ api.add_resource(Summary, "/summary/<string:text>")
 if __name__ == "__main__":
     app.run(debug=True)
 
-# not sure if this is needed
 @app.after_request
 def after_request(response):
     white_origin= ['http://localhost']
