@@ -5,6 +5,5 @@ gunicorn
 requests
 transformers
 #torch
-#torch==1.2.0+cpu torchvision==0.4.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
-torch-cpu==0.1.0
+torch==1.2.0+cpu torchvision==0.4.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
 itsdangerous==1.1.0
