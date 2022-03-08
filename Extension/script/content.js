@@ -2,20 +2,14 @@
 console.log("Kiyo online!")
 
 function requestAPI(text) {
-    fetch("https://stormy-river-23565.herokuapp.com/summary/" + text, {mode: "no-cors"}, {method: "GET"})
-    .then(function (response) {
-        return JSON.stringify(response)
-    }).then(function (text) {
-        console.log('GET response:');
-        console.log(text); 
-    });
-    // .then(data => {
-    //     return JSON.stringify(data);
-    // })
-    // .then(post => {
-    //     console.log("Returned data:")
-    //     console.log(post); //.summary_text
+    // fetch("https://stormy-river-23565.herokuapp.com/summary/" + text, {mode: "no-cors"}, {method: "GET"})
+    // .then(function (response) {
+    //     return JSON.stringify(response)
+    // }).then(function (text) {
+    //     console.log('GET response:');
+    //     console.log(text); 
     // });
+    console.log("here should be the result")
 }
 
 // function to read selection from content
