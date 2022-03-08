@@ -15,4 +15,5 @@ six==1.15.0
 SQLAlchemy==1.3.18
 Flask-SQLAlchemy==2.4.3
 torch==1.10.2+cpu
-transformers
+#transformers
+transformers[torch]
