@@ -1,4 +1,4 @@
--f https://download.pytorch.org/whl/cpu/torch_stable.html
+# -f https://download.pytorch.org/whl/cpu/torch_stable.html
 Flask==1.1.2
 Flask-RESTful==0.3.8
 Werkzeug==1.0.1
