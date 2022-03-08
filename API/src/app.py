@@ -18,6 +18,7 @@ class Summary(Resource):
         
         # access the ML model
         summary = compute_summarize(text, model)
+        
         print(summary)
         return jsonify(summary)
 
