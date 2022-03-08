@@ -1,20 +1,23 @@
 
 from xml.parsers.expat import model
+
+from simplejson import load
 from flask import Flask, request, jsonify
 from flask_restful import Api, Resource
 
-from .kiyo_model import compute_summarize
-
+from .kiyo_model import initalize_model, compute_summarize
 
 app = Flask(__name__)
 api = Api(app)
+
+model = initalize_model()
 
 class Summary(Resource):
     # get request text string and returns summary
     def get(self, text):
         
         # access the ML model
-        summary = compute_summarize(text)
+        summary = compute_summarize(text, model)
         print(summary)
         return jsonify(summary)
 

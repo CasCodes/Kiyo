@@ -2,7 +2,8 @@
 console.log("Kiyo online!")
 
 function requestAPI(text) {
-    fetch("https://kiyo-kun-api.herokuapp.com/summary/" + text, {mode: "no-cors"}, {method: "GET"})
+    //  https://kiyo-kun-api.herokuapp.com/summary/
+    fetch("http://127.0.0.1:5000/summary" + text, {mode: "no-cors"}, {method: "GET"})
     .then(function (response) {
         return JSON.stringify(response)
     }).then(function (text) {
