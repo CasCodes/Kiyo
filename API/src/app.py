@@ -1,7 +1,7 @@
 
 from xml.parsers.expat import model
 
-from simplejson import load
+# from simplejson import load
 from flask import Flask, request, jsonify
 from flask_restful import Api, Resource
 
