@@ -19,7 +19,8 @@ function readSelection() {
         console.log(textSelected)
 
         // pass textSelected into python?
-        requestAPI(textSelected);
+        //requestAPI(textSelected);
+        connect(textSelected);
     }
 }
 

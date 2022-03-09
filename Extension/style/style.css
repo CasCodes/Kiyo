@@ -1,5 +1,38 @@
 
+:root {
+    --text-color:rgb(199, 199, 199);
+}
+
+
+html {
+    background-color: #19171A;
+}
+
 #content {
     width: 300px;
-    height: 200px;
+    height: 300px;
+}
+
+body {
+    border-radius: 6px;
+    padding: 10px;
+    margin: 20px;
+    background-color: #222222;
+}
+
+h1 {
+    color: var(--text-color);
+}
+
+p {
+    color: var(--text-color);
+}
+
+button:hover {
+    background-color: rgb(255, 136, 0);
+}
+
+
+img {
+    width: 60px
 }
