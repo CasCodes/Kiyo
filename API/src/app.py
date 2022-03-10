@@ -4,8 +4,9 @@ from xml.parsers.expat import model
 # from simplejson import load
 from flask import Flask, request, jsonify
 from flask_restful import Api, Resource
+import json
 
-from .kiyo_model import initalize_model, compute_summarize
+from kiyo_model import initalize_model, compute_summarize
 
 app = Flask(__name__)
 api = Api(app)
@@ -15,15 +16,13 @@ model = initalize_model()
 class Summary(Resource):
     # get request text string and returns summary
     def get(self, text):
-        
         # access the ML model
         summary = compute_summarize(text, model)
         
-        print(summary)
-        return jsonify(summary)
+        return jsonify(
+            message = (summary['summary_text'])
+        )
 
-    def post(self):
-        return {"data": "posted!"}
 
 api.add_resource(Summary, "/summary/<string:text>")
 
@@ -40,3 +39,7 @@ if __name__ == "__main__":
 #     print("after:")
 #     print(response)
 #     return response
+
+
+# 09:43:56 web.1   |  {'summary_text': 'This course is designed to introduce you to the world of software development and to provide you with the skills and confidence you will need to pursue a career in software development.'}
+# 09:43:56 web.1   |  <Response 205 bytes [200 OK]>

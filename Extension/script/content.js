@@ -1,14 +1,16 @@
 // content.js triggers when the page gets loaded
 console.log("Kiyo online!")
 
+//  https://kiyo-kun-api.herokuapp.com/summary/
 function requestAPI(text) {
-    //  https://kiyo-kun-api.herokuapp.com/summary/
-    fetch("http://127.0.0.1:5000/summary" + text, {mode: "no-cors"}, {method: "GET"})
+    fetch("http://127.0.0.1:5000/summary/" + text, {mode: "no-cors"}, {method: "GET"})
     .then(function (response) {
-        return JSON.stringify(response)
+
+        return response
     }).then(function (text) {
+
         console.log('GET response:');
-        console.log(text); 
+        console.log(text.getJSON)
     });
 }
 
@@ -20,7 +22,7 @@ function readSelection() {
 
         // pass textSelected into python?
         //requestAPI(textSelected);
-        connect(textSelected);
+        requestAPI(textSelected);
     }
 }
 
