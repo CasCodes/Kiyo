@@ -3,14 +3,13 @@ console.log("Kiyo online!")
 
 //  https://kiyo-kun-api.herokuapp.com/summary/
 function requestAPI(text) {
-    fetch("http://127.0.0.1:5000/summary/" + text, {mode: "no-cors"}, {method: "GET"})
-    .then(function (response) {
-
-        return response
-    }).then(function (text) {
-
-        console.log('GET response:');
-        console.log(text.getJSON)
+    // send the request
+    fetch("http://127.0.0.1:5000/summary/" + text)
+    .then(response => {
+        console.log(response)
+        return response.json()
+    }).then(content => {
+        console.log(content['message']);
     });
 }
 
@@ -20,8 +19,7 @@ function readSelection() {
         var textSelected = window.getSelection().toString();
         console.log(textSelected)
 
-        // pass textSelected into python?
-        //requestAPI(textSelected);
+        // send request to api
         requestAPI(textSelected);
     }
 }
