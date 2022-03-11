@@ -3,9 +3,8 @@
     --text-color:rgb(199, 199, 199);
 }
 
-
 html {
-    background-color: #19171A;
+    background-color: #1C1C1C;
 }
 
 .content {
@@ -17,7 +16,7 @@ section {
     border-radius: 6px;
     padding: 10px;
     margin: 20px;
-    background-color: #222222;
+    background-color: #303030;
 }
 
 .s1 {
@@ -35,10 +34,14 @@ p {
 
 button {
     margin-left: 85%;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    align-items: right;
 }
 
 button:hover {
-    background-color: rgb(255, 136, 0);
+    background-color: #FE5723;
 }
 
 .card {
@@ -52,4 +55,20 @@ button:hover {
 .card:hover {
     background: url("kiyo_smug.png") no-repeat;
     background-size: 100px 100px;
+}
+
+progress {
+    /* float: left; */
+    margin-top: 10px;
+    width: 100%;
+
+    background: #FE5723;
+}
+
+progress::-webkit-progress-value {
+    background: #FE5723;;
+  }
+
+.stateInfo {
+    margin-right: 70%;
 }
