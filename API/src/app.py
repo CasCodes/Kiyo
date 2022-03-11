@@ -1,27 +1,31 @@
 
 from xml.parsers.expat import model
 
-# from simplejson import load
+# import libraries
 from flask import Flask, request, jsonify
-from flask_restful import Api, Resource
+from flask_restful import Api, Resource, reqparse
 from flask_cors import CORS, cross_origin
 
+# ML model
 from kiyo_model import initalize_model, compute_summarize
 
+# setup
 app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 api = Api(app)
+# define rules
+get_args = reqparse.RequestParser()
+get_args.add_argument("text", type=str, help="Input text")
 
+# initialize ML model
 model = initalize_model()
 
 class Summary(Resource):
-    # get request text string and returns summary
+    # get text string and returns summary
     def get(self, text):
-        # access the ML model
         summary = compute_summarize(text, model)
-        
         return jsonify(
             message = (summary['summary_text'])
         )
