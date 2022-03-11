@@ -32,7 +32,15 @@ button:hover {
     background-color: rgb(255, 136, 0);
 }
 
-
-img {
-    width: 60px
+.card {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background: url("kiyo_normal.png") no-repeat;
+    background-size: 100px 100px;
+    display: block;
+}
+.card:hover {
+    background: url("kiyo_smug.png") no-repeat;
+    background-size: 100px 100px;
 }
