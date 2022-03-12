@@ -179,3 +179,7 @@ progress::-webkit-progress-value {
     height: 30px;
     padding: 0;
 }
+
+.back-button:hover {
+    background-color: var(--compliment-color);
+}
