@@ -62,8 +62,12 @@ button {
     
 }
 
+#s2 {
+    height: 40px
+}
+
 #goBtn {
-    margin-left: 85%;
+    float: right;
     background-color: var(--accent-color)
 }
 
@@ -96,10 +100,6 @@ progress::-webkit-progress-value {
     background: var(--compliment-color);
   }
 
-#stateInfo {
-    display: inline-block;
-}
-
 .icon-container {
     position: relative;
     margin-left: 20px;
@@ -115,3 +115,56 @@ progress::-webkit-progress-value {
 .link-button:hover{
     background-color: var(--compliment-color);
 }
+
+.settings-button {
+    background-color: var(--bg-color);
+}
+
+
+/* LOADING BAR */
+.container {
+    margin-top:18px;
+    width: 290px;
+    position: relative;
+  }
+  
+  .progress2 {
+    border-radius: 30px;
+    background-color: var(--bg-off-color);
+  }
+  
+  .progress-bar2 {
+    height: 10px;
+    border-radius: 30px;
+    transition: 0.4s linear;
+    transition-property: width, background-color;
+  }
+  
+  .progress-moved .progress-bar2 {
+    background-color: var(--compliment-color);
+    animation: progress 5s;
+  }
+  
+  @keyframes progress {
+    0% {
+      width: 0%;
+      background: #35706a;
+    }
+  
+    100% {
+      width: 100%;
+      background: var(--compliment-color);
+      box-shadow: 0 0 40px var(--compliment-color);
+    }
+  }
+  
+  .loader {
+    --p: 0;
+    animation: p 5s steps(100) infinite;
+    counter-reset: p var(--p);
+    font-size: 2.1em;
+    position: absolute;
+    bottom: 45px;
+    left: 325px;
+    color: #f3c623;
+  }
