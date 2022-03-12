@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="style/style.css">
   </head>
   <body>
+    <!-- TEXT SECTION -->
     <section id="s1">
       <div class="content">
         <div class="card"></div>
@@ -16,17 +17,28 @@
       </div>
     </section>
 
+    <!-- BUTTON & LOADING SECTION -->
     <section id="s2">
-      <button id="goBtn">Go!</button>
+      <button id="goBtn">
+        <img src="style/icons/text.svg">
+      </button>
       <progress value="30" max="100" id="loadingBar"></progress>
     </section>
 
-    </body>
+    <!-- LINKS & STATE INFO -->
+    <div class="icon-container">
+      <button class="link-button">
+        <img src="style/icons/github.svg" class="link-icon">
+      </button>
+      <button class="link-button">
+        <img src="style/icons/youtube.svg" class="link-icon">
+      </button>
+      <button class="link-button">
+        <img src="style/icons/coffee.svg" class="link-icon">
+      </button>
+    </div>
+
     <script src="script/widget.js"></script>
   </body>
-
-  <footer>
-    <p id="stateInfo">ready!</p>
-  </footer>
 </html>
 

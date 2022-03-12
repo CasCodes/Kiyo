@@ -1,10 +1,31 @@
 
 :root {
-    --text-color:rgb(199, 199, 199);
+    /*COLORS*/
+    --text-color: #C7C7C7;
+
+    --accent-color: #FE5723;
+    --accent-selected:#cf4419 ;
+    --compliment-color: #009688;
+    
+    --bg-color: #0D0E13;
+    --bg-off-color: #3E3E4F;
+
+    --section-color: #282836;
+
+    /*FONT SIZES*/
+    --headline: 20px;
+    --par: 13px;
 }
 
-html {
-    background-color: #1C1C1C;
+@font-face {
+    font-family: 'IBM Plex Sans', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600&display=swap');
+}
+
+body {
+    background-color: var(--bg-color);
+    width: 400px;
+    height: 330px;
 }
 
 .content {
@@ -16,7 +37,7 @@ section {
     border-radius: 6px;
     padding: 10px;
     margin: 20px;
-    background-color: #303030;
+    background-color: var(--section-color);
 }
 
 .s1 {
@@ -25,23 +46,33 @@ section {
 }
 
 h1 {
+    font-family: 'IBM Plex Sans', sans-serif;
     color: var(--text-color);
+    font-size: var(--headline);
 }
 
 p {
+    font-family: 'IBM Plex Sans', sans-serif;
     color: var(--text-color);
+    font-size: var(--par);
 }
 
 button {
-    margin-left: 85%;
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    align-items: right;
+    border: none;
+    cursor: pointer;
+    
 }
 
-button:hover {
-    background-color: #FE5723;
+#goBtn {
+    margin-left: 85%;
+    background-color: var(--accent-color)
+}
+
+#goBtn:hover {
+    background-color: var(--accent-selected);
 }
 
 .card {
@@ -62,13 +93,31 @@ progress {
     margin-top: 10px;
     width: 100%;
 
-    background: #FE5723;
+    background: var(--compliment-color);
 }
 
 progress::-webkit-progress-value {
-    background: #FE5723;;
+    background: var(--compliment-color);
   }
 
 .stateInfo {
     margin-right: 70%;
 }
+
+.icon-container {
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.link-button {
+    display: inline-block;
+    background-color: var(--section-color);
+
+    margin-right: 10px;
+}
+
+.link-button:hover{
+    background-color: var(--bg-off-color);
+}
+
