@@ -15,23 +15,30 @@ cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 api = Api(app)
+
 # define rules
-get_args = reqparse.RequestParser()
-get_args.add_argument("text", type=str, help="Input text")
+# get_args = reqparse.RequestParser()
+# get_args.add_argument("text", type=str, help="Input text")
 
 # initialize ML model
 model = initalize_model()
 
 class Summary(Resource):
     # get text string and returns summary
-    def get(self, text):
+    def get(self):
+        text = request.args.get('text')
+        print(text)
+
         summary = compute_summarize(text, model)
-        return jsonify(
+        
+        response = jsonify(
             message = (summary['summary_text'])
         )
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response
 
 
-api.add_resource(Summary, "/summary/<string:text>")
+api.add_resource(Summary, "/summary/")
 
 if __name__ == "__main__":
     app.run(debug=True)
