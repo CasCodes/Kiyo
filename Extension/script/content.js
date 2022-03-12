@@ -17,6 +17,13 @@ function requestAPI(text) {
         return response.json()
     }).then(content => {
         console.log(content['message']);
+
+        // call function to display content in widget
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+
+        // call function to display error in widget
     });
 }
 

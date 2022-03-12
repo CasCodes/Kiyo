@@ -29,13 +29,20 @@ class Summary(Resource):
         text = request.args.get('text')
         print(text)
 
-        summary = compute_summarize(text, model)
-        
-        response = jsonify(
-            message = (summary['summary_text'])
-        )
-        response.headers.add('Access-Control-Allow-Origin', '*')
-        return response
+        if len(text) > 2:
+            summary = compute_summarize(text, model)
+            
+            response = jsonify(
+                message = (summary['summary_text'])
+            )
+            response.headers.add('Access-Control-Allow-Origin', '*')
+            return response
+        else:
+            response = jsonify(
+                message = "No text selected! please review this video for more information: https://www.youtube.com/watch?v=xvFZjo5PgG0" 
+            )
+            response.headers.add('Access-Control-Allow-Origin', '*')
+            return response
 
 
 api.add_resource(Summary, "/summary/")
