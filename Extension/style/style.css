@@ -96,8 +96,8 @@ progress::-webkit-progress-value {
     background: var(--compliment-color);
   }
 
-.stateInfo {
-    margin-right: 70%;
+#stateInfo {
+    display: inline-block;
 }
 
 .icon-container {

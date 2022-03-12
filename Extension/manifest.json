@@ -23,5 +23,12 @@
     "browser_action": {
         "default_popup": "widget.html",
         "default_icon": "res/icon.png"
+    },
+    
+    "icons": {
+        "16": "res/icon.png",
+        "32": "res/icon.png",
+        "48": "res/icon.png",
+        "128": "res/icon.png"
     }
 }
