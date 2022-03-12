@@ -116,17 +116,13 @@ progress::-webkit-progress-value {
     background-color: var(--compliment-color);
 }
 
-.settings-button {
-    background-color: var(--bg-color);
-}
-
 
 /* LOADING BAR */
 .container {
     margin-top:18px;
     width: 290px;
     position: relative;
-  }
+ }
   
   .progress2 {
     border-radius: 30px;
@@ -168,3 +164,18 @@ progress::-webkit-progress-value {
     left: 325px;
     color: #f3c623;
   }
+
+
+  /* SUMMARY PAGE SPECIFIC */
+
+#s3 {
+    height: 95%;
+    padding: 20px;
+}
+
+.back-button {
+    background-color: var(--bg-color);
+    width: 30px;
+    height: 30px;
+    padding: 0;
+}
