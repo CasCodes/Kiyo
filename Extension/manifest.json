@@ -16,6 +16,10 @@
         "tabs"
     ],
 
+    "background": {
+        "service_worker": "script/background.js"
+    },
+
     "action": {
         "default_popup": "widget.html",
         "default_icon": "res/icon.png"

@@ -1,6 +1,7 @@
 // content.js triggers when the page gets loaded
 console.log("Kiyo online!")
 
+
 //  https://kiyo-kun-api.herokuapp.com/summary/ http://127.0.0.1:5000/summary/
 function requestAPI(text) {
     // send the request
@@ -14,12 +15,13 @@ function requestAPI(text) {
             method: "GET",
         })
         .then(response => {
-            console.log(response)
+            // console.log(response)
             return response.json()
         }).then(content => {
             console.log(content['message']);
 
             // call function to display content in widget
+            
         })
     } catch(e) {
         console.log(e)
@@ -31,19 +33,18 @@ function requestAPI(text) {
 function readSelection() {
     if (window.getSelection) {
         var textSelected = window.getSelection().toString();
-        console.log(textSelected)
 
         // send request to api
-        requestAPI(textSelected);
+        return(requestAPI(textSelected));
     }
 }
 
 // recieve message
 chrome.runtime.onMessage.addListener(gotMessage)
-function gotMessage(message, sender, sendResponse) {
-    console.log(message, sender);
+function gotMessage(message, sender) {
+    // console.log(message, sender);
 
-    if (message.src == "widget") {
+    if (message.action == "go") {
         // grab selected text from webpage
         readSelection();
     }

@@ -4,9 +4,6 @@ function addListener() {
     var btn = document.getElementById("goBtn");
     btn.addEventListener("click", function() {
         // this code executes when button is pressed
-        console.log("clicked!");
-
-        // get tabs id
         let params = {
             active: true,
             currentWindow: true
@@ -17,11 +14,9 @@ function addListener() {
         function goPressed(tabs) {
             let msg = {
                 action: "go",
-                src: "widget"
             }
             chrome.tabs.sendMessage(tabs[0].id, msg);
         }
-
     });
 }
 
