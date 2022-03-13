@@ -9,22 +9,22 @@ function requestAPI(text) {
 
     for (let k in data) {url.searchParams.append(k, data[k])}
 
-    fetch(url, {
-        method: "GET",
-    })
-    .then(response => {
-        console.log(response)
-        return response.json()
-    }).then(content => {
-        console.log(content['message']);
+    try {
+        fetch(url, {
+            method: "GET",
+        })
+        .then(response => {
+            console.log(response)
+            return response.json()
+        }).then(content => {
+            console.log(content['message']);
 
-        // call function to display content in widget
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-
-        // call function to display error in widget
-    });
+            // call function to display content in widget
+        })
+    } catch(e) {
+        console.log(e)
+        // send error message to popup
+    }
 }
 
 // function to read selection from content
