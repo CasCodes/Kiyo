@@ -10,23 +10,21 @@ function requestAPI(text) {
 
     for (let k in data) {url.searchParams.append(k, data[k])}
 
-    try {
-        fetch(url, {
-            method: "GET",
-        })
-        .then(response => {
-            // console.log(response)
-            return response.json()
-        }).then(content => {
-            console.log(content['message']);
+    fetch(url, {
+        method: "GET",
+    })
+    .catch(error => {
+        console.log("Looks like the server is offline! 🙉")
+        response = {message: "API error!"};
+    })
+    .then(response => {
+        // console.log(response)
+        return response.json()
+    }).then(content => {
+        console.log(content['message']);
 
-            // call function to display content in widget
-            
-        })
-    } catch(e) {
-        console.log(e)
-        // send error message to popup
-    }
+        // call function to display content in widget
+    })
 }
 
 // function to read selection from content
