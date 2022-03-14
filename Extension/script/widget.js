@@ -25,3 +25,23 @@ window.addEventListener("load", function() {
     console.log("widget loaded!");
     addListener();
 });
+
+// recieve message from content
+chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {
+        console.log(request.message)
+
+        // load new html page
+        displaySummary(request.messages)
+    }
+);
+
+function displaySummary(text){
+    // load summary html & change default popup to it
+
+    // PROBLEM!! THIS RELOADS THE POPUP, WHICH RELOADS THIS SCRIPT
+    location.href = 'summary.html'
+    chrome.action.setPopup({popup: 'summary.html'})
+    
+    console.log(text)
+}

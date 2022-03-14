@@ -2,6 +2,10 @@
 console.log("Kiyo online!")
 
 
+function sendMessage(message) {
+    chrome.runtime.sendMessage({message: message});
+}   
+
 //  https://kiyo-kun-api.herokuapp.com/summary/ http://127.0.0.1:5000/summary/
 function requestAPI(text) {
     // send the request
@@ -14,16 +18,17 @@ function requestAPI(text) {
         method: "GET",
     })
     .catch(error => {
-        console.log("Looks like the server is offline! 🙉")
+        console.log(error.message)
+        console.log("Either the server is offline or you are using an Adblocker 🙉")
         response = {message: "API error!"};
     })
     .then(response => {
         // console.log(response)
         return response.json()
     }).then(content => {
-        console.log(content['message']);
 
-        // call function to display content in widget
+        // send message to widget
+        sendMessage(content['message'])
     })
 }
 

@@ -169,8 +169,9 @@ progress::-webkit-progress-value {
 /* SUMMARY PAGE SPECIFIC */
 
 #s3 {
-    height: 95%;
-    padding: 20px;
+    padding: 0px;
+    padding: 10px;
+    height: 90%;
 }
 
 .back-button {
