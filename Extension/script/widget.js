@@ -28,20 +28,16 @@ window.addEventListener("load", function() {
 
 // recieve message from content
 chrome.runtime.onMessage.addListener(
-    function(request, sender, sendResponse) {
-        console.log(request.message)
+    function(request, sender, sendResponse) {    
+        var text = request.message
+        sendResponse({message: "OK"})
 
-        // load new html page
-        displaySummary(request.messages)
+        displaySummary(text)
     }
 );
 
 function displaySummary(text){
     // load summary html & change default popup to it
-
-    // PROBLEM!! THIS RELOADS THE POPUP, WHICH RELOADS THIS SCRIPT
-    location.href = 'summary.html'
-    chrome.action.setPopup({popup: 'summary.html'})
-    
+    // chrome.action.setPopup({popup: 'summary.html'})
     console.log(text)
 }
