@@ -40,4 +40,13 @@ function displaySummary(text){
     // load summary html & change default popup to it
     // chrome.action.setPopup({popup: 'summary.html'})
     console.log(text)
+    //document.getElementById("content_text").innerHTML = text
+    var el1 = document.querySelector('#s2');
+    el1.insertAdjacentHTML('afterend', 
+    `<section id="s3"><div class="content" id="summary_section"><h1>Here is your summary:</h1><p id="replacer"> ${text} </p></div></section>`
+    );
+
+    // hide other sections
+    document.getElementById("s1").style.display = "none";
+    document.getElementById("s2").style.display = "none"; 
 }
