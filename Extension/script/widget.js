@@ -52,6 +52,7 @@ function displaySummary(text){
     document.getElementById("s2").style.display = "none"; 
 }
 
+// animate the progress bar
 var i = 0;
 function move() {
     if (i == 0) {

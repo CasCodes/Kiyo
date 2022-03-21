@@ -172,7 +172,7 @@ progress::-webkit-progress-value {
 }
   
 #myBar {
-    width: 1%;
+    width: 0%;
     background-color: green;
 
     height: 10px;
@@ -199,4 +199,3 @@ progress::-webkit-progress-value {
 .back-button:hover {
     background-color: var(--compliment-color);
 }
-
