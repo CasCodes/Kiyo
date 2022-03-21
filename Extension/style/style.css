@@ -136,12 +136,12 @@ progress::-webkit-progress-value {
     transition-property: width, background-color;
   }
   
-  .progress-moved .progress-bar2 {
+  /* .progress-moved .progress-bar2 {
     background-color: var(--compliment-color);
     animation: progress 5s;
-  }
+  } */
   
-  @keyframes progress {
+  /* @keyframes progress {
     0% {
       width: 0%;
       background: #35706a;
@@ -163,7 +163,22 @@ progress::-webkit-progress-value {
     bottom: 45px;
     left: 325px;
     color: #f3c623;
-  }
+  } */
+
+#myProgress {
+    width: 100%;
+    border-radius: 30px;
+    background-color: var(--bg-off-color);
+}
+  
+#myBar {
+    width: 1%;
+    background-color: green;
+
+    height: 10px;
+    border-radius: 30px;
+    background-color: var(--compliment-color);
+}
 
 
 /* SUMMARY PAGE SPECIFIC */
@@ -171,7 +186,7 @@ progress::-webkit-progress-value {
 #s3 {
     padding: 0px;
     padding: 10px;
-    height: 90%;
+    height: 80%;
 }
 
 .back-button {
@@ -184,3 +199,4 @@ progress::-webkit-progress-value {
 .back-button:hover {
     background-color: var(--compliment-color);
 }
+

@@ -16,6 +16,7 @@ function addListener() {
                 action: "go",
             }
             chrome.tabs.sendMessage(tabs[0].id, msg);
+            move();
         }
     });
 }
@@ -49,4 +50,24 @@ function displaySummary(text){
     // hide other sections
     document.getElementById("s1").style.display = "none";
     document.getElementById("s2").style.display = "none"; 
+}
+
+var i = 0;
+function move() {
+    if (i == 0) {
+        i = 1;
+        var elem = document.getElementById("myBar");
+        var width = 1;
+        var id = setInterval(frame, 10);
+        function frame() {
+            if (width >= 100) {
+                clearInterval(id);
+                i = 0;
+            }
+            else {
+                    width+=0.3;
+                    elem.style.width = width + "%";
+                }
+        }
+    }
 }
