@@ -32,7 +32,6 @@ chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {    
         var text = request.message
         sendResponse({message: "OK"})
-
         displaySummary(text)
     }
 );
@@ -66,9 +65,9 @@ function move() {
                 i = 0;
             }
             else {
-                    width+=0.3;
-                    elem.style.width = width + "%";
-                }
+                width+=(10/width);
+                elem.style.width = width + "%";
+            }
         }
     }
 }
