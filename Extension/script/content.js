@@ -37,7 +37,7 @@ function readSelection() {
     if (window.getSelection) {
         var textSelected = window.getSelection().toString();
 
-        // cap at max 1500 characters
+        // cap at max 2000 characters
         if (textSelected.length > 2000) {
             return 1;
         }

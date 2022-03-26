@@ -16,7 +16,7 @@ function addListener() {
                 action: "go",
             }
             chrome.tabs.sendMessage(tabs[0].id, msg, function(response) {
-
+                // check for response & display infotag
                 if (response.message == "selectionError") {
                     if (response.status == 1) {
                         changeStatus("Please select < 2000 characters")
@@ -51,10 +51,9 @@ chrome.runtime.onMessage.addListener(
 );
 
 function displaySummary(text){
-    // load summary html & change default popup to it
-    // chrome.action.setPopup({popup: 'summary.html'})
     console.log(text)
-    //document.getElementById("content_text").innerHTML = text
+
+    // display summary section in widget
     var el1 = document.querySelector('#s2');
     el1.insertAdjacentHTML('afterend', 
     `<section id="s3"><div class="content" id="summary_section"><h1>Here is your summary:</h1><p id="replacer"> ${text} </p></div></section>`
