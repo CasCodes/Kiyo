@@ -37,18 +37,35 @@ function readSelection() {
     if (window.getSelection) {
         var textSelected = window.getSelection().toString();
 
-        // send request to api
-        return(requestAPI(textSelected));
+        // cap at max 1500 characters
+        if (textSelected.length > 2000) {
+            return 1;
+        }
+
+        else if (textSelected.length < 100) {
+            return 2;
+        }
+
+        else {
+            // send request to api
+            requestAPI(textSelected);
+        }
     }
 }
 
 // recieve message
 chrome.runtime.onMessage.addListener(gotMessage)
-function gotMessage(message, sender) {
-    // console.log(message, sender);
-
+function gotMessage(message, sender, sendResponse) {
     if (message.action == "go") {
         // grab selected text from webpage
-        readSelection();
+        var selection = readSelection();
+        if (selection == 1 || selection == 2) {
+            // send response
+            sendResponse({
+                message: "selectionError",
+                status: selection
+            })
+            console.log("selection error")
+        }
     }
 }

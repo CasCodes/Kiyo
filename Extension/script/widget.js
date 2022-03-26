@@ -15,8 +15,22 @@ function addListener() {
             let msg = {
                 action: "go",
             }
-            chrome.tabs.sendMessage(tabs[0].id, msg);
-            move();
+            chrome.tabs.sendMessage(tabs[0].id, msg, function(response) {
+
+                if (response.message == "selectionError") {
+                    if (response.status == 1) {
+                        changeStatus("Please select < 2000 characters")
+                    }
+                    else if (response.status == 2) {
+                        changeStatus("Please select more characters")
+                    }
+                }
+    
+                else {
+                    changeStatus("loading...")
+                    move();
+                }
+            });
         }
     });
 }
@@ -70,4 +84,9 @@ function move() {
             }
         }
     }
+}
+
+function changeStatus(status) {
+    var tag = document.getElementById("infotag")
+    tag.innerHTML = status;
 }
