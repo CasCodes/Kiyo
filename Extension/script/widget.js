@@ -25,8 +25,7 @@ function addListener() {
                         changeStatus("Please select more characters")
                     }
                 }
-    
-                else {
+                else if (response.message == "OK") {
                     changeStatus("loading...")
                     move();
                 }
@@ -62,6 +61,7 @@ function displaySummary(text){
     // hide other sections
     document.getElementById("s1").style.display = "none";
     document.getElementById("s2").style.display = "none"; 
+    changeStatus("voila!")
 }
 
 // animate the progress bar

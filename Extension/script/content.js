@@ -67,5 +67,10 @@ function gotMessage(message, sender, sendResponse) {
             })
             console.log("selection error")
         }
+        else {
+            sendResponse({
+                message: "OK",
+            })
+        }
     }
 }
