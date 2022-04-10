@@ -32,6 +32,28 @@ function addListener() {
             });
         }
     });
+
+    // add listeners to other buttons
+    // github
+    var gh_btn = document.getElementById("ghBtn");
+    gh_btn.addEventListener("click", function() {
+        // open webpage
+        console.log("GH go!")
+    });
+
+    // youtube
+    var gh_btn = document.getElementById("ytBtn");
+    gh_btn.addEventListener("click", function() {
+        // open webpage
+        console.log("YT go!")
+    });
+    
+    // coffee
+    var gh_btn = document.getElementById("cfBtn");
+    gh_btn.addEventListener("click", function() {
+        // open webpage
+        console.log("coffee go!")
+    });
 }
 
 // calls functions as soon as the popup is loaded
