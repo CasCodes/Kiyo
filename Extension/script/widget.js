@@ -1,5 +1,5 @@
 
-// adds click listener to button
+// adds click listener to buttons
 function addListener() {
     var btn = document.getElementById("goBtn");
     btn.addEventListener("click", function() {
@@ -38,21 +38,21 @@ function addListener() {
     var gh_btn = document.getElementById("ghBtn");
     gh_btn.addEventListener("click", function() {
         // open webpage
-        console.log("GH go!")
+        window.open("https://github.com/CasCodes/Kiyo", "_blank");
     });
 
     // youtube
     var gh_btn = document.getElementById("ytBtn");
     gh_btn.addEventListener("click", function() {
         // open webpage
-        console.log("YT go!")
+        window.open("https://www.youtube.com/watch?v=P_clRwPIq-A", "_blank");
     });
     
     // coffee
     var gh_btn = document.getElementById("cfBtn");
     gh_btn.addEventListener("click", function() {
         // open webpage
-        console.log("coffee go!")
+        window.open("https://www.youtube.com/watch?v=a3Z7zEc7AXQ", "_blank");
     });
 }
 
