@@ -6,21 +6,19 @@ function sendMessage(message) {
     chrome.runtime.sendMessage({message: message});
 }   
 
+
 //  https://kiyo-kun-api.herokuapp.com/summary/ http://127.0.0.1:5000/summary/
 function requestAPI(text) {
-    // send the request
+    var url = new URL("http://127.0.0.1:5000/summary")
     var data = {"text": text}
-    var url = new URL("http://127.0.0.1:5000/summary/")
-
-    for (let k in data) {url.searchParams.append(k, data[k])}
-
+    
     fetch(url, {
-        method: "GET",
-    })
-    .catch(error => {
-        console.log(error.message)
-        console.log("Either the server is offline or you are using an Adblocker 🙉")
-        response = {message: "API error!"};
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        redirect: 'follow',
+        body: JSON.stringify(data)
     })
     .then(response => {
         // console.log(response)
