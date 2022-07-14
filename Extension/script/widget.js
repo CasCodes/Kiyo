@@ -67,6 +67,7 @@ chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {    
         var text = request.message
         sendResponse({message: "OK"})
+
         displaySummary(text)
     }
 );

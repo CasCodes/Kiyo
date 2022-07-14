@@ -59,7 +59,7 @@ function gotMessage(message, sender, sendResponse) {
     if (message.action == "go") {
         // grab selected text from webpage
         var selection = readSelection();
-        if (selection == 1 || selection == 2) {
+        if (selection == 1 || selection == 2) { // TODO: handel selections smaller than 128!!
             // send response
             sendResponse({
                 message: "selectionError",
