@@ -6,16 +6,26 @@ function sendMessage(message) {
     chrome.runtime.sendMessage({message: message});
 }   
 
-//  https://kiyo-kun-api.herokuapp.com/summary/ http://127.0.0.1:5000/summary/
+// http://127.0.0.1:5000/summary/
 function requestAPI(text) {
     // send the request
     var data = {"text": text}
-    var url = new URL("http://127.0.0.1:5000/summary/")
+    var url = new URL("https://cn5yynjcfh.execute-api.eu-central-1.amazonaws.com/default/rest_demo")
 
-    for (let k in data) {url.searchParams.append(k, data[k])}
+    //for (let k in data) {url.searchParams.append(k, data[k])}
 
     fetch(url, {
-        method: "GET",
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Headers' : '*',
+            'Access-Control-Allow-Origin':'*',
+            'Access-Control-Allow-Methods': 'OPTIONS,POST,GET'
+        },
+        mode: "cors",
+        body: {
+            data,
+        },
     })
     .catch(error => {
         console.log(error.message)
@@ -23,12 +33,13 @@ function requestAPI(text) {
         response = {message: "API error!"};
     })
     .then(response => {
-        // console.log(response)
+        console.log(response)
         return response.json()
     }).then(content => {
 
         // send message to widget
-        sendMessage(content['message'])
+        console.log(content['body'])
+        sendMessage(content)
     })
 }
 
