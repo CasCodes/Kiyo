@@ -16,30 +16,23 @@ function requestAPI(text) {
 
     fetch(url, {
         method: "POST",
-        headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Headers' : '*',
-            'Access-Control-Allow-Origin':'*',
-            'Access-Control-Allow-Methods': 'OPTIONS,POST,GET'
-        },
         mode: "cors",
         body: {
-            data,
+            "text": "hello from the other side!",
         },
-    })
-    .catch(error => {
-        console.log(error.message)
-        console.log("Either the server is offline or you are using an Adblocker 🙉")
-        response = {message: "API error!"};
     })
     .then(response => {
         console.log(response)
         return response.json()
     }).then(content => {
-
-        // send message to widget
-        console.log(content['body'])
+        // send message to widgets
+        console.log(content)
         sendMessage(content)
+    })
+    .catch(error => {
+        console.log(error.message)
+        console.log("Either the server is offline or you are using an Adblocker 🙉")
+        response = {message: "API error!"};
     })
 }
 
