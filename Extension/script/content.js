@@ -12,28 +12,17 @@ function requestAPI(text) {
     var data = {"text": text}
     var url = new URL("https://cn5yynjcfh.execute-api.eu-central-1.amazonaws.com/default/rest_demo")
 
-    //for (let k in data) {url.searchParams.append(k, data[k])}
-
     fetch(url, {
         method: "POST",
         mode: "cors",
-        body: {
-            "text": "hello from the other side!",
-        },
+        body: JSON.stringify(text),
     })
-    .then(response => {
-        console.log(response)
-        return response.json()
-    }).then(content => {
-        // send message to widgets
-        console.log(content)
-        sendMessage(content)
-    })
-    .catch(error => {
-        console.log(error.message)
-        console.log("Either the server is offline or you are using an Adblocker 🙉")
-        response = {message: "API error!"};
-    })
+    .then(response => response.json())
+    .then(rb => {
+        // send text to widget
+        console.log(rb);
+        sendMessage(rb);
+    });
 }
 
 // function to read selection from content

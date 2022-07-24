@@ -1,4 +1,4 @@
-# this is Kiyo's brain!
+# this is Kiyo's brain 🧠! Powered by Huggingface
 
 from transformers import pipeline
 
@@ -9,4 +9,4 @@ def initalize_model():
 def compute_summarize(text, model):
     summary = model(text, min_length=30, do_sample=False)
 
-    return summary[0] #['summary_text']
+    return summary[0]
