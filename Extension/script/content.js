@@ -13,9 +13,12 @@ function requestAPI(text) {
     var url = new URL("https://cn5yynjcfh.execute-api.eu-central-1.amazonaws.com/default/rest_demo")
 
     fetch(url, {
-        method: "POST",
         mode: "cors",
-        body: JSON.stringify(text),
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+            'Access-Control-Allow-Origin': "*"
+        }
     })
     .then(response => response.json())
     .then(rb => {
