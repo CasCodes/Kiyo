@@ -17,7 +17,7 @@ function requestAPI(text) {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
-            'Access-Control-Allow-Origin': "*"
+            'Content-Type': 'application/json',
         }
     })
     .then(response => response.json())
