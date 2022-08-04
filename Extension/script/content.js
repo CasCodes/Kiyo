@@ -18,6 +18,7 @@ function requestAPI(text) {
         body: JSON.stringify(data),
         headers: {
             'Content-Type': 'application/json',
+            'x-api-key': 'bcvf0Xe4Fo55caXI8PzAL5DVZgl8Hc9G4Aq463Yz'
         }
     })
     .then(response => response.json())
