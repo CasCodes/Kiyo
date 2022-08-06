@@ -5,8 +5,8 @@ AI page summarisation implemented as a chromium plugin
 
 ### Tired of reading long web pages?
 
-Kiyo can help! By using state-of-the-art machine learning (nlp), Kiyo summarizes the text you need to read!
+Kiyo can help! By using state-of-the-art machine learning (nlp), Kiyo summarizes the text for you! Just like that:
 
+![kiyo](https://user-images.githubusercontent.com/64489325/183253130-321889be-b813-4113-878b-c267114019de.gif)
 
-<img src="https://user-images.githubusercontent.com/64489325/158026530-a3ac190d-f72e-44d2-8e5e-d4435765a402.png" width=400px>
-
+If you want to learn more about how it works, have a look at my [blog post]()
