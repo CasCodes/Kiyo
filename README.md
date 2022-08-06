@@ -13,3 +13,10 @@ Kiyo can help! By using state-of-the-art machine learning (nlp), Kiyo summarizes
 The extensions reads the text you've highlighted and sends it to a REST API (Build with API Gateway). This invokes a serverless Lambda function which itself invokes a machine learning endpoint deployed on sagemaker. There the summarization is predicted and the result gets send back to your browser.
 
 If you want to learn more, have a look at my [blog post]()
+
+### Install
+1. Download the packed extension
+2. Navigate to the extensions setting in your chromium browser. (You should see an overview of all installed)
+3. Drag and drop the `KiyoExtension.crx` file into the browser. That's it! Kiyo will be visible in the extensions menu in the top right.
+ 
+> Info: Chrome recently switched their extensions to v3, which can't yet be ported to firefox. I will try to do that as soon as possible.
