@@ -24,5 +24,5 @@ If you want to learn more, have a look at my [blog post]()
 > Info: Chrome recently switched their extensions to v3, which can't yet be ported to firefox. I will try to do that as soon as possible.
 
 ### ❤️ Support me
-Hosting web apps - especially machine learning - costs money. If you like this project, you can use crypto to "buy me a coffe" through MetaMask by pressing the coffe button in the extension or use my [wallet adress](https://etherscan.io/address/0x2d36e55Fe253628F257DcF8090b2503834ec02D5)
+Hosting web apps - especially machine learning - costs money. If you like this project, you can use crypto to "buy me a coffe" by pressing the coffe button in the extension or view my wallet [here](https://etherchain.org/account/2d36e55Fe253628F257DcF8090b2503834ec02D5)
 Thanks! ☕
