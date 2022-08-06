@@ -17,6 +17,8 @@ If you want to learn more, have a look at my [blog post]()
 ### Install
 1. Download the packed extension
 2. Navigate to the extensions setting in your chromium browser. (You should see an overview of all installed)
-3. Drag and drop the `KiyoExtension.crx` file into the browser. That's it! Kiyo will be visible in the extensions menu in the top right.
+3. Drag and drop the `KiyoExtension.crx` file into the browser. (You may need to enable developer mode)
+
+✅ That's it! Kiyo will be visible in the extensions menu in the top right.
  
 > Info: Chrome recently switched their extensions to v3, which can't yet be ported to firefox. I will try to do that as soon as possible.
