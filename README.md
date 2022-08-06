@@ -15,7 +15,7 @@ The extensions reads the text you've highlighted and sends it to a REST API (Bui
 If you want to learn more, have a look at my [blog post]()
 
 ### 💾 Install
-1. Download the packed extension
+1. Download the [packed extension](https://github.com/CasCodes/Kiyo/releases/tag/v.1.0.0) (.crx)
 2. Navigate to the extensions setting in your chromium browser. (You should see an overview of all installed)
 3. Drag and drop the `KiyoExtension.crx` file into the browser. (You may need to enable developer mode)
 
