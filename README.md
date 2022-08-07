@@ -12,7 +12,7 @@ Kiyo can help! By using state-of-the-art machine learning (nlp), Kiyo summarizes
 ### ⚙️ How it works
 The extensions reads the text you've highlighted and sends it to a REST API (Build with API Gateway). This invokes a serverless Lambda function which itself invokes a machine learning endpoint deployed on sagemaker. There the summarization is predicted and the result gets send back to your browser.
 
-If you want to learn more, have a look at my [blog post]()
+If you want to learn more, have a look at my [blog post](https://cascodes.github.io/cascodes_hugo/projects/kiyo/)
 
 ### 💾 Install
 1. Download the [packed extension](https://github.com/CasCodes/Kiyo/releases/tag/v.1.0.0) (.crx)
